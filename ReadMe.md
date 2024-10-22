@@ -60,7 +60,7 @@ The system follows a client-server architecture where:
 
 1. Clone the repository:
    ```bash
-   git clone https://gitlab.uwe.ac.uk/a22-osman/systems-development-group-project.git
+   git clone https://github.com/saz-v1/SysDev-Group-Project.git
    ```
 
 2. Navigate to the project directory:
@@ -118,4 +118,3 @@ The application includes tests for:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
