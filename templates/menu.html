@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/33a3ca84a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <!--Navabar-->
+     {% include 'navbar.html' %}
+      <!--Navabar-->
+
+      <section id = "menu" class = "py-5">
+        <div class = "container">
+            <div class = "row g-0">
+                <div class="custom-filter-buttons mt-5">
+                    <button type="button" class="custom-btn btn-primary">Main</button>
+                    <button type="button" class="custom-btn">Dessert</button>
+                    <button type="button" class="custom-btn">Drink</button>
+                </div>
+                
+
+                <div class = "menu-list mt-4 row gx-0 gy-3">
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 starter">
+                        <div class = "menu-img position-relative">
+                            <img src = "../static/Images/pexels-valeria-boltneva-580612.jpg" class = "w-100">
+                        </div>
+                        <div class = "text-center">
+                            <div class = "stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class = "my-1">Hamburger</p>
+                            <span class = "fw-bold">£4.50</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 menu">
+                        <div class = "menu-img position-relative">
+                            <img src = "../static/Images/pizza-2589569_1280.jpg" class = "w-100">
+                            
+                        </div>
+                        <div class = "text-center">
+                            <div class = "stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class = "my-1">Pizza</p>
+                            <span class = "fw-bold">£16.00</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 menu">
+                        <div class = "menu-img position-relative">
+                            <img src = "../static/Images/pasta-2610762_1280.jpg" class = "w-100">
+                        </div>
+                        <div class = "text-center">
+                            <div class = "stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+                            <p class = "my-1">Pasta</p>
+                            <span class = "fw-bold">£13.00</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 menu">
+                        <div class = "collection-img position-relative">
+                            <img src = "../static/Images/steak-7423229_1280.jpg" class = "w-100">
+                             
+                        </div>
+                        <div class = "text-center">
+                            <div class = "stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+                            <p class = "my-1">Steak</p>
+                            <span class = "fw-bold">£20.00</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 starter">
+                        <div class = "collection-img position-relative">
+                            <img src = "../static/Images/julia-karnavusha-zWdBRmh8Gv8-unsplash.jpg" class = "w-100">
+                        </div>
+                        <div class = "text-center">
+                            <div class = "stars mt-3">
+                                <div class = "stars mt-3">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+    
+                                </div>
+                            </div>
+                            <p class = "my-1">Fish and Chips</p>
+                            <span class = "fw-bold">£10.00</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 menu">
+                        <div class = "collection-img position-relative">
+                            <img src = "../static/Images/charlesdeluvio-PqsImnjuElM-unsplash.jpg" class = "w-100">
+                        </div>
+                        <div class = "text-center">
+                            <div class = "stars mt-3">
+                                <div class = "stars mt-3">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+    
+                                </div>
+                            </div>
+                            <p class = "my-1">Chicken tikka masala</p>
+                            <span class = "fw-bold">£14.00</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 menu">
+                        <div class = "collection-img position-relative">
+                            <img src = "../static/Images/karolina-kolodziejczak-Qf-gqJSWFYQ-unsplash.jpg" class = "w-100">
+                        </div>
+                        <div class = "text-center">
+                            <div class = "stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+                            <p class = "my-1">Lasgna</p>
+                            <span class = "fw-bold">£ 18.00</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 menu">
+                        <div class = "collection-img position-relative">
+                            <img src = "../static/Images/casey-lee-awj7sRviVXo-unsplash.jpg" class = "w-100">
+                        </div>
+                        <div class = "text-center">
+                            <div class = "stars mt-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+                            <p class = "my-1">Salmom</p>
+                            <span class = "fw-bold">£ 25.00</span>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+      
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

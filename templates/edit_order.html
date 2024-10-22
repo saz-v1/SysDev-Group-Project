@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Order</title>
+    <!-- Include any necessary CSS files -->
+    <link rel="stylesheet" href="../static/CSS/style.css">
+</head>
+<body>
+     <!--Navabar-->
+     {% include 'navbar.html' %}
+     <!--Navabar-->
+    <section class="hero-order">
+        <div class="order-form">
+            <form class="order-form" action="{{ url_for('edit_order') }}" method="post">
+                <h6>Edit Order</h6>
+
+                <!-- Restaurant Dropdown -->
+                <div class="dropdown">
+                    <label for="restaurant">Restaurant:</label>
+                    <select id="restaurant" name="restaurant">
+                        <option value="none">Select Restaurant</option>
+                        {% for restaurant in restaurants %}
+                            <option value="{{ restaurant.branch_id }}" {% if order_data.restaurant.branch_id == restaurant.branch_id %} selected {% endif %}>{{ restaurant.restaurant_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                
+                <!-- Main Item Dropdown -->
+                <div class="dropdown">
+                    <label for="starter">Main:</label>
+                    <select id="starter" name="starter">
+                        <option value="none">Select Main</option>
+                        {% for item in menu %}
+                            {% if item.menu_type == 'Main' %}
+                                <option value="{{ item.menu_id }}" {% if order_data.main_item.menu_id == item.menu_id %} selected {% endif %}>{{ item.menu_name }} - £{{ item.price }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <!-- Quantity input for Main -->
+                    <label for="main-quantity">Quantity:</label>
+                    <input type="number" id="main-quantity" name="main-quantity" value="{{ order_data.main_quantity }}" required>
+                </div>
+                
+                <!-- Dessert Item Dropdown -->
+                <div class="dropdown">
+                    <label for="dessert">Dessert:</label>
+                    <select id="dessert" name="dessert">
+                        <option value="none">Select a Dessert</option>
+                        {% for item in menu %}
+                            {% if item.menu_type == 'Dessert' %}
+                                <option value="{{ item.menu_id }}" {% if order_data.dessert_item.menu_id == item.menu_id %} selected {% endif %}>{{ item.menu_name }} - £{{ item.price }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <!-- Quantity input for Dessert -->
+                    <label for="dessert-quantity">Quantity:</label>
+                    <input type="number" id="dessert-quantity" name="dessert-quantity" value="{{ order_data.dessert_quantity }}" required>
+                </div>
+                
+                <!-- Drink Item Dropdown -->
+                <div class="dropdown">
+                    <label for="drink">Drink:</label>
+                    <select id="drink" name="drink">
+                        <option value="none">Select a Drink</option>
+                        {% for item in menu %}
+                            {% if item.menu_type == 'Drink' %}
+                                <option value="{{ item.menu_id }}" {% if order_data.drink_item.menu_id == item.menu_id %} selected {% endif %}>{{ item.menu_name }} - £{{ item.price }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <!-- Quantity input for Drink -->
+                    <label for="drink-quantity">Quantity:</label>
+                    <input type="number" id="drink-quantity" name="drink-quantity" value="{{ order_data.drink_quantity }}" required>
+                </div>
+                
+                <!-- Submit Button -->
+                <button class="btn2" type="submit" formaction="{{ url_for('payment') }}">Proceed to Payment</button>
+                <a href="{{ url_for('index') }}" class="btn1">Cancel Order</a>
+
+
+
+            </form>
+        </div>
+    </section>
+    
+    
+    <!-- Include your JavaScript file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+</body>
+</html>

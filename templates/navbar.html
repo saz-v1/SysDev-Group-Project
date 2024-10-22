@@ -1,0 +1,95 @@
+     <!--Navabar-->
+     <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+          <a class="navbar-logo me-auto" href="{{ url_for('index') }}">Horizon</a>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Horizon</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                      <!-- Common menu items for all users -->
+                      <li class="nav-item">
+                          <a class="nav-link {% if request.path == url_for('index') %}active{% endif %}" href="{{ url_for('index') }}">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link {% if request.path == url_for('menu') %}active{% endif %}" href="{{ url_for('menu') }}">Menu</a>
+                      </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link {% if request.path == url_for('customer_page') %}active{% endif %}" href="{{ url_for('customer_page') }}">Member</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == url_for('staff') %}active{% endif %}" href="{{ url_for('staff') }}">Staff</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == url_for('manager') %}active{% endif %}" href="{{ url_for('manager') }}">Manager</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == url_for('admin') %}active{% endif %}" href="{{ url_for('admin') }}">Admin</a>
+                        </li>
+
+                      <!-- Menu items specific to different user roles -->
+                      {% if session.logged_in %}
+                        {% if session.user_type == 'customer' %}
+                              <li class="nav-item">
+                                  <a class="nav-link {% if request.path == url_for('order') %}active{% endif %}" href="{{ url_for('order') }}">Order</a>
+                              </li>
+                               
+                              {% elif session.user_type == 'manager' %}
+                              <li class="nav-item"> 
+                                  <a class="nav-link {% if request.path == url_for('reservation') %}active{% endif %}" href="{{ url_for('reservation') }}">Reservation</a>
+                              </li>
+                              <li class="nav-item"> 
+                                <a class="nav-link {% if request.path == url_for('reservation_management') %}active{% endif %}" href="{{ url_for('reservation_management') }}">Reservation Management</a>
+                            </li>
+                              <li class="nav-item">
+                                <a class="nav-link {% if request.path == url_for('menu_management') %}active{% endif %}" href="{{ url_for('menu_management') }}">Menu Management</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link {% if request.path == url_for('add_menu') %}active{% endif %}" href="{{ url_for('add_menu') }}">Add Menu</a>
+                            </li>
+                            
+                              {% elif session.user_type == 'staff' %}                             
+                              <li class="nav-item">
+                                <a class="nav-link {% if request.path == url_for('inventory_management') %}active{% endif %}" href="{{ url_for('inventory_management') }}">Inventory</a>    
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link {% if request.path == url_for('add_inventory') %}active{% endif %}" href="{{ url_for('add_inventory') }}">Add Inventory</a>
+                              </li>
+                              
+                              
+                              {% elif session.user_type == 'admin' %}
+                           
+                              <li class="nav-item">
+                                <a class="nav-link {% if request.path == url_for('staff_management') %}active{% endif %}" href="{{ url_for('staff_management') }}">Staff Management</a>
+                              </li>
+                          {% endif %}
+                      {% endif %}
+                  </ul>
+              </div>
+          </div>
+  
+          {% if session.logged_in %}
+            <!-- If logged in, display logout button -->
+            <a href="{{ url_for('logout') }}" class="login-button">Logout</a>
+          {% else %}
+
+          <a href="{{ url_for('login') }}" class="login-button">Login</a>
+
+          {% endif %}
+          
+  
+          <!-- Navbar toggler button -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+  </nav>
+  
+      <!--Navabar-->

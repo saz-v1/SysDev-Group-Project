@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../static/CSS/style.css"><link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+            <link rel="stylesheet" href="../static/CSS/style.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+            <script src="https://kit.fontawesome.com/33a3ca84a0.js" crossorigin="anonymous"></script>
+        
+           
+        </head>
+<body>
+    {% include 'navbar.html' %}
+    <section class="hero-reservation">
+        <div class="reservation-form"> <!-- Reusing the order-form class -->
+            <form class="order-form" method="POST" action="#">
+                <h6>Book Reservation</h6>
+                
+                <!-- Restaurant Dropdown -->
+                <div class="dropdown">
+                    <label for="restaurant">Restaurant:</label>
+                    <select id="restaurant" name="branch_id"> 
+                        <option value="none">Select a Restaurant</option>
+                        {% for restaurant in restaurants %}
+                            <option value="{{ restaurant.branch_id }}">{{ restaurant.restaurant_name }} - {{ restaurant.restaurant_location }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+
+                <!-- Customer Name Dropdown -->
+                <div class="dropdown">
+                    <label for="customer_name">Customer Name:</label>
+                    <select id="customer_name" name="customer_name"> 
+                        <option value="none">Select a Customer</option>
+                        {% for customer in customers %}
+                            <option value="{{ customer }}">{{ customer }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+
+                    <!-- Date -->
+                <div class="dropdown">
+                    <label for="reservation_date">Reservation Date:</label>
+                    <input type="date" id="reservation_date" name="reservation_date" required>
+                </div>
+
+                <!-- Time -->
+                <div class="dropdown">
+                    <label for="reservation_time">Reservation Time:</label>
+                    <input type="time" id="reservation_time" name="reservation_time" required>
+                </div>
+    
+                <!-- Reservation Type Dropdown -->
+                <div class="dropdown">
+                    <label for="reservation_type">Reservation Type:</label>
+                    <select id="reservation_type" name="reservation_type">
+                        <option value="Standard">Standard</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Birthday">Birthday</option>
+                    </select>
+                </div>
+                
+                <!-- Number of Guests -->
+                <div class="dropdown">
+                    <label for="number_of_guests">Number of Guests:</label>
+                    <input type="number" id="number_of_guests" name="number_of_guests" required>
+                </div>
+                
+                <!-- Submit Button -->
+                <input class="btn2" type="submit" value="Book Reservation">
+            </form>
+        </div>
+    </section>
+
+    
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+</body>
+</html>
