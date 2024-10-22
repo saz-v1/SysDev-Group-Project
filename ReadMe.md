@@ -1,4 +1,3 @@
-```markdown
 # Horizon Restaurant Management System
 
 ## Overview
